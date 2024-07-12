@@ -1,0 +1,19 @@
+name: wsiiz_tp
+packages:
+  - wsiiz_tp
+scripts:
+  codegen:
+    run: >-
+      dart run build_runner build --delete-conflicting-outputs &&
+      fluttergen &&
+      dart pub global run intl_utils:generate
+
+  flutterfire:
+    run: >-
+      flutterfire configure 
+      --project=wsiiz-tp
+      --account=mwyczarski@gmail.com
+      --platforms=web
+      -o "lib/firebase_options.dart" 
+      --yes 
+      -f
