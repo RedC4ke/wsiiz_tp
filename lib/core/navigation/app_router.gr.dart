@@ -20,7 +20,13 @@ abstract class _$AppRouter extends RootStackRouter {
         routeData: routeData,
         child: const AuthPage(),
       );
-    }
+    },
+    AuthWrapperRoute.name: (routeData) {
+      return AutoRoutePage<dynamic>(
+        routeData: routeData,
+        child: const AuthWrapperPage(),
+      );
+    },
   };
 }
 
@@ -34,6 +40,20 @@ class AuthRoute extends PageRouteInfo<void> {
         );
 
   static const String name = 'AuthRoute';
+
+  static const PageInfo<void> page = PageInfo<void>(name);
+}
+
+/// generated route for
+/// [AuthWrapperPage]
+class AuthWrapperRoute extends PageRouteInfo<void> {
+  const AuthWrapperRoute({List<PageRouteInfo>? children})
+      : super(
+          AuthWrapperRoute.name,
+          initialChildren: children,
+        );
+
+  static const String name = 'AuthWrapperRoute';
 
   static const PageInfo<void> page = PageInfo<void>(name);
 }
