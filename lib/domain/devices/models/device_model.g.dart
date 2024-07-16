@@ -10,10 +10,10 @@ DeviceModel _$DeviceModelFromJson(Map<String, dynamic> json) => DeviceModel(
       name: json['name'] as String,
       available: json['available'] as bool,
       type: $enumDecode(_$DeviceTypeEnumMap, json['type']),
-      ip: (json['ip'] as num).toInt(),
-      mask: (json['mask'] as num).toInt(),
       location:
           LocationModel.fromJson(json['location'] as Map<String, dynamic>),
+      ip: (json['ip'] as num?)?.toDouble(),
+      mask: (json['mask'] as num?)?.toDouble(),
       id: json['id'] as String?,
       brand: json['brand'] as String?,
       model: json['model'] as String?,
@@ -44,4 +44,8 @@ const _$DeviceTypeEnumMap = {
   DeviceType.accessPoint: 'accessPoint',
   DeviceType.modem: 'modem',
   DeviceType.drive: 'drive',
+  DeviceType.computer: 'computer',
+  DeviceType.printer: 'printer',
+  DeviceType.server: 'server',
+  DeviceType.vlan: 'VLAN',
 };

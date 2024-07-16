@@ -3,6 +3,7 @@ import 'package:equatable/equatable.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wsiiz_tp/core/utils/converters.dart';
 import 'package:wsiiz_tp/domain/devices/models/location_model.dart';
+import 'package:wsiiz_tp/gen/assets.gen.dart';
 
 part 'device_model.g.dart';
 
@@ -14,6 +15,36 @@ enum DeviceType {
   accessPoint,
   modem,
   drive,
+  computer,
+  printer,
+  server,
+  @JsonValue('VLAN')
+  vlan
+}
+
+extension XDeviceType on DeviceType {
+  AssetGenImage get icon {
+    switch (this) {
+      case DeviceType.networkSwitch:
+        return Assets.images.networkSwitch;
+      case DeviceType.router:
+        return Assets.images.router;
+      case DeviceType.accessPoint:
+        return Assets.images.ap;
+      case DeviceType.modem:
+        return Assets.images.router;
+      case DeviceType.drive:
+        return Assets.images.nas;
+      case DeviceType.computer:
+        return Assets.images.client;
+      case DeviceType.printer:
+        return Assets.images.printer;
+      case DeviceType.server:
+        return Assets.images.server;
+      case DeviceType.vlan:
+        return Assets.images.vlan;
+    }
+  }
 }
 
 @JsonSerializable()
@@ -22,9 +53,9 @@ class DeviceModel with EquatableMixin {
     required this.name,
     required this.available,
     required this.type,
-    required this.ip,
-    required this.mask,
     required this.location,
+    this.ip,
+    this.mask,
     this.id,
     this.brand,
     this.model,
@@ -46,8 +77,8 @@ class DeviceModel with EquatableMixin {
   final DocumentReference? parent;
   final DeviceType type;
   final String? mac;
-  final int ip;
-  final int mask;
+  final double? ip;
+  final double? mask;
   final LocationModel location;
 
   Map<String, dynamic> toJson() => _$DeviceModelToJson(this);
@@ -57,8 +88,8 @@ class DeviceModel with EquatableMixin {
     String? name,
     bool? available,
     DeviceType? type,
-    int? ip,
-    int? mask,
+    double? ip,
+    double? mask,
     LocationModel? location,
     String? brand,
     String? model,

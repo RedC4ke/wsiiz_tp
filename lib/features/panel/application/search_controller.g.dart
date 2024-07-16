@@ -1,27 +1,26 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'devices_controller.dart';
+part of 'search_controller.dart';
 
 // **************************************************************************
 // RiverpodGenerator
 // **************************************************************************
 
-String _$devicesControllerHash() => r'8700aa51b75a4a20a2a66fa2566356b683142d97';
+String _$searchControllerHash() => r'c2d2e3a4c45e7e7408c2f19c40c000d6e40ef93a';
 
-/// See also [DevicesController].
-@ProviderFor(DevicesController)
-final devicesControllerProvider = AutoDisposeNotifierProvider<DevicesController,
-    LoadableState<List<DeviceModel>>>.internal(
-  DevicesController.new,
-  name: r'devicesControllerProvider',
+/// See also [SearchController].
+@ProviderFor(SearchController)
+final searchControllerProvider =
+    AutoDisposeNotifierProvider<SearchController, String?>.internal(
+  SearchController.new,
+  name: r'searchControllerProvider',
   debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
       ? null
-      : _$devicesControllerHash,
+      : _$searchControllerHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
 
-typedef _$DevicesController
-    = AutoDisposeNotifier<LoadableState<List<DeviceModel>>>;
+typedef _$SearchController = AutoDisposeNotifier<String?>;
 // ignore_for_file: type=lint
 // ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member

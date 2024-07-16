@@ -62,4 +62,15 @@ class AuthController extends _$AuthController with BaseControllerMixin {
       (user) => state = LoadableState.success(user),
     );
   }
+
+  Future<void> signOut() async {
+    state = const LoadableState.loading();
+
+    final result = await ref.read(authRepositoryProvider).signOut().run();
+
+    result.fold(
+      (f) => state = LoadableState.error(f),
+      (_) => state = const LoadableState.initial(),
+    );
+  }
 }

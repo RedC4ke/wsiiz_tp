@@ -4,7 +4,8 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:wsiiz_tp/application/auth/auth_controller.dart';
 import 'package:wsiiz_tp/core/navigation/app_router.dart';
 import 'package:wsiiz_tp/core/theme/app_theme.dart';
-import 'package:wsiiz_tp/core/utils/extensions.dart';
+
+import 'package:wsiiz_tp/features/wrapper/site_wrapper.dart';
 import 'package:wsiiz_tp/gen/l10n.dart';
 
 class App extends ConsumerWidget {
@@ -25,15 +26,8 @@ class App extends ConsumerWidget {
         GlobalWidgetsLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
       ],
-      builder: (context, child) => ColoredBox(
-        color: context.colorScheme.surface,
-        child: ConstrainedBox(
-          constraints: const BoxConstraints(
-            maxWidth: 800,
-            minWidth: 400,
-          ),
-          child: child,
-        ),
+      builder: (context, child) => SiteWrapper(
+        child: child,
       ),
     );
   }

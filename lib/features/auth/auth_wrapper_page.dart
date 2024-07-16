@@ -14,7 +14,9 @@ class AuthWrapperPage extends ConsumerWidget {
 
     return AutoRouter.declarative(
       routes: (_) => state.maybeWhen(
-        success: (_) => const [],
+        success: (_) => const [
+          PanelRoute(),
+        ],
         orElse: () => const [
           AuthRoute(),
         ],

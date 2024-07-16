@@ -5,7 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:wsiiz_tp/application/auth/auth_controller.dart';
 import 'package:wsiiz_tp/core/utils/extensions.dart';
 import 'package:wsiiz_tp/core/utils/validators.dart';
-import 'package:wsiiz_tp/core/widgets/tm_loading.dart';
+import 'package:wsiiz_tp/core/widgets/app_loading.dart';
 
 @RoutePage()
 class AuthPage extends HookConsumerWidget {

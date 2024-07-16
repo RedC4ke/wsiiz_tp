@@ -29,7 +29,7 @@ abstract class AppTheme {
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.all(16),
             shape: const StadiumBorder(),
-            textStyle: AppTextTheme.theme.labelMedium?.copyWith(
+            textStyle: AppTextTheme.theme.labelSmall?.copyWith(
               fontWeight: FontWeight.w700,
             ),
             elevation: 0,
@@ -116,6 +116,17 @@ abstract class AppTheme {
             borderRadius: BorderRadius.circular(8),
           ),
           width: 800,
+        ),
+        listTileTheme: const ListTileThemeData(
+          contentPadding: EdgeInsets.symmetric(
+            horizontal: 16,
+            vertical: 4,
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(16),
+            ),
+          ),
         ),
       );
 }

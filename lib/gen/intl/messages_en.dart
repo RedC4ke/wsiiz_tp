@@ -25,6 +25,7 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "add": MessageLookupByLibrary.simpleMessage("Add"),
+        "brand": MessageLookupByLibrary.simpleMessage("Brand"),
         "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
         "close": MessageLookupByLibrary.simpleMessage("Close"),
         "delete": MessageLookupByLibrary.simpleMessage("Delete"),
@@ -70,15 +71,24 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("Invalid phone number"),
         "err_wrong_repeated_password":
             MessageLookupByLibrary.simpleMessage("The passwords do not match."),
+        "find": MessageLookupByLibrary.simpleMessage("Find"),
+        "location": MessageLookupByLibrary.simpleMessage("Location"),
         "login": MessageLookupByLibrary.simpleMessage("Login"),
         "login_header":
             MessageLookupByLibrary.simpleMessage("Login to your organization"),
+        "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+        "mac": MessageLookupByLibrary.simpleMessage("MAC"),
+        "mask": MessageLookupByLibrary.simpleMessage("Mask"),
+        "model": MessageLookupByLibrary.simpleMessage("Model"),
         "no_data": MessageLookupByLibrary.simpleMessage("No data"),
         "no_results": MessageLookupByLibrary.simpleMessage("No results"),
+        "offline": MessageLookupByLibrary.simpleMessage("Offline"),
+        "online": MessageLookupByLibrary.simpleMessage("Online"),
         "password": MessageLookupByLibrary.simpleMessage("Password"),
         "remove": MessageLookupByLibrary.simpleMessage("Remove"),
         "save": MessageLookupByLibrary.simpleMessage("Save"),
         "saved": MessageLookupByLibrary.simpleMessage("Saved"),
-        "search": MessageLookupByLibrary.simpleMessage("Search")
+        "search": MessageLookupByLibrary.simpleMessage("Search"),
+        "status": MessageLookupByLibrary.simpleMessage("Status")
       };
 }
